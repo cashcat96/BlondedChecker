@@ -15,6 +15,20 @@ To help figure out other frequencies to run the script, check out https://cronta
   - checks to see if there have been any changes between older and newer versions of blonded.co, and takes care of when and how you will be notified of those changes
 
 ## Reminders:
-- Make sure to change the directories listed at the beginnings of these three scripts so they will run on your computer. Read through the other comments I have made in the code for other information about what does what and how make the code work for your specific use case
+- The only change you should have to make to this code is the first command in blondedchecker.sh:  Change the directory after ```cd``` so it points to the correct location on your computer
 - I have taken very few legit coding classes, so I apologize if my code breaks some cardinal coding rules that I am unaware of
 - This is my first public github repository and I am fairly new to the ins and outs of github, so bear with me
+
+## Super Simple Install Tutorial on Linux
+- Install git ```sudo apt install git```
+- Make a directory where you want to house the project ```mkdir <name your directory>```
+- Enter that directory ```cd <name of your directory>```
+- Clone the project so you have all the files ```git clone git@github.com:cashcat96/BlondedChecker.git``` or ```git clone https://github.com/cashcat96/BlondedChecker.git```
+- Enter the project folder ```cd BlondedChecker```
+- Get your current directory path ```pwd``` and copy that directory
+- Open blondedchecker.sh ```nano blondedchecker.sh``` and change ```change/this/directory``` by pasting in the path you copied in the previous step
+- Add the script to your crontab ```crontab -e``` and add ```*/5 * * * * /your/path/to/blondedchecker.sh``` (with your computer's specific directory) to the end of the file
+  - this will run the script every 5 minutes
+  - feel free to change the interval by referencing www.crontab.guru
+- You can test if the scripts run by running the command ```./your/path/to/blondedchecker.sh```
+- You should be good to go!
