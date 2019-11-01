@@ -1,7 +1,9 @@
 # Blonded Checker
 Hey everybody, here is something that I wrote in the last couple days.  Just a super simple set of three shell scripts that run to check if there have been updates to www.blonded.co.
 
-To schedule this program to run, you will need to edit your crontab ```crontab -e``` to point to the blondedchecker.sh script, and tell crontab how often to run it. An example crontab line (the one I use) is below, which runs the script every five minutes:
+To get this up and running on your system, you only need to do two things:
+1. In blondedchecker.sh, edit ```change/this/directory``` so that it is the location of the directory in which the scripts are located
+2. To schedule this program to run, you will need to edit your crontab ```crontab -e``` to point to the blondedchecker.sh script, and tell crontab how often to run it. An example crontab line (the one I use) is below, which runs the script every five minutes:
 ```
 */5 * * * * /home/pi/blondedchecker/blondedchecker.sh
 ```
@@ -13,11 +15,6 @@ To help figure out other frequencies to run the script, check out https://cronta
   - This removes lines that I have relalized change often on blonded.co (mainly lines that include tokens)
 - sizechecker.sh
   - checks to see if there have been any changes between older and newer versions of blonded.co, and takes care of when and how you will be notified of those changes
-
-## Reminders:
-- The only change you should have to make to this code is the first command in blondedchecker.sh:  Change the directory after ```cd``` so it points to the correct location on your computer
-- I have taken very few legit coding classes, so I apologize if my code breaks some cardinal coding rules that I am unaware of
-- This is my first public github repository and I am fairly new to the ins and outs of github, so bear with me
 
 ## Super Simple Install Tutorial on Linux
 - Install git ```sudo apt install git```
@@ -32,3 +29,7 @@ To help figure out other frequencies to run the script, check out https://cronta
   - feel free to change the interval by referencing www.crontab.guru
 - You can test if the scripts run by running the command ```./your/path/to/blondedchecker.sh```
 - You should be good to go!
+
+## Reminders:
+- I have taken very few legit coding classes, so I apologize if my code breaks some cardinal coding rules that I am unaware of
+- This is my first public github repository and I am fairly new to the ins and outs of github, so bear with me
