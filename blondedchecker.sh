@@ -3,7 +3,8 @@
 # This is the main script that runs, it references filter.sh and sizechecker.sh
 
 # CHANGE THIS NEXT LINE:
-cd /home/pi/blondedchecker			# moves into the directory where all the rest of the scripts are (change this so it works with your system)
+cd /home/pi/BlondedChecker			# moves into the directory where all the rest of the scripts are (change this so it works with your system)
+
 #rm index.html	# if you want to make sure there isn't already an index.html file, uncomment this line
 
 wget https://blonded.co		# get index.html from the website
