@@ -33,3 +33,4 @@ To help figure out other frequencies to run the script, check out https://cronta
 ## Reminders:
 - I have taken very few legit coding classes, so I apologize if my code breaks some cardinal coding rules that I am unaware of
 - This is my first public github repository and I am fairly new to the ins and outs of github, so bear with me
+- As always, have fun and be grateful that you are alive at the same time as Frank Ocean
