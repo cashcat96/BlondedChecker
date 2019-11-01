@@ -8,5 +8,6 @@ operable_indexhtml="/home/pi/publicblondedchecker/BlondedChecker/index.html"		# 
 sed -i '/token/d' $operable_indexhtml	# remove all lines with the word 'token' in them
 sed -i '/reqid/d' $operable_indexhtml	# remove all lines with the word 'reqid' in them
 sed -i '/Token/d' $operable_indexhtml	# remove all lines with the word 'Token' in them
+sed -i '/sha256/d' $operable_indexhtml   # remove all lines with the word 'sha256' in them
 
 #echo 'filter.sh has run'	# uncomment this line to help figure out where problems are occuring
