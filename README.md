@@ -16,5 +16,5 @@ To help figure out other frequencies to run the script, check out https://cronta
 
 ## Reminders:
 - Make sure to change the directories listed at the beginnings of these three scripts so they will run on your computer. Read through the other comments I have made in the code for other information about what does what and how make the code work for your specific use case
-- I have taken very few legit coding classes, so I apologize if my code breaks come cardinal coding rules that I am unaware of
+- I have taken very few legit coding classes, so I apologize if my code breaks some cardinal coding rules that I am unaware of
 - This is my first public github repository and I am fairly new to the ins and outs of github, so bear with me
