@@ -1,7 +1,5 @@
 # Blonded Checker
-We now have a twitter account that gets automatically updated using this script, so you don't have to install this for yourself. Check it out! https://twitter.com/blondedalerts (we are still ironing out some bugs with the twitter account, so it is still under active development)
-
-Hey everybody, here is something that I wrote in the last couple days.  Just a super simple set of three shell scripts that run to check if there have been updates to www.blonded.co.
+Hey everybody, here is something that I wrote in a couple days.  Just a super simple set of three shell scripts that run to check if there have been updates to www.blonded.co.
 
 To get this up and running on your system, you only need to do two things:
 1. In blondedchecker.sh, edit ```change/this/directory``` so that it is the location of the directory in which the scripts are located
@@ -10,6 +8,10 @@ To get this up and running on your system, you only need to do two things:
 */5 * * * * /home/pi/blondedchecker/blondedchecker.sh
 ```
 To help figure out other frequencies to run the script, check out https://crontab.guru
+
+## Some exciting news
+We now have a twitter account that gets automatically updated using this script, so you don't have to install this for yourself. Check it out! https://twitter.com/blondedalerts (we are still ironing out some bugs with the twitter account, so it is still under active development)
+
 ## There are three important scripts:
 - blondedchecker.sh
   - This the main script that downloads the new index.html for blonded.co, calculates the difference between it and a previous index.html and calls the other two scripts
