@@ -1,4 +1,6 @@
 # Blonded Checker
+We now have a twitter account that gets automatically updated using this script, so you don't have to install this for yourself. Check it out! https://twitter.com/blondedalerts (we are still ironing out some bugs with the twitter account, so it is still under active development)
+
 Hey everybody, here is something that I wrote in the last couple days.  Just a super simple set of three shell scripts that run to check if there have been updates to www.blonded.co.
 
 To get this up and running on your system, you only need to do two things:
