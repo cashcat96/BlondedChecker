@@ -8,4 +8,4 @@ sed -i '/reqid/d' index.html	# remove all lines with the word 'reqid' in them
 sed -i '/Token/d' index.html	# remove all lines with the word 'Token' in them
 sed -i '/sha256/d' index.html   # remove all lines with the word 'sha256' in them
 
-#echo 'filter.sh has run'	# uncomment this line to help figure out where problems are occuring
+#echo "the filter script has run"

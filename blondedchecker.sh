@@ -1,13 +1,12 @@
 #!/bin/sh
 
-# This is the main script that runs, it references filter.sh and sizechecker.sh
+# THIS IS THE MAIN SCRIPT THAT RUNS, IT REFERENCES filter.sh and sizechecker.sh
 
-# CHANGE THIS NEXT LINE:
-cd /change/this/directory	# moves into the directory where all the rest of the scripts are (change this so it works with your system)
+cd /your/project/directory/here	# change this to the base directory where all this program's scripts are stored
 
 #rm index.html	# if you want to make sure there isn't already an index.html file, uncomment this line
 
-wget https://blonded.co		# get index.html from the website
+wget https://blonded.co		# get the html from the website
 
 ./filter.sh         # run filter script, removing dumb lines that trip this program (edit this script as problems come up)
 
@@ -17,5 +16,4 @@ mv index.html prev.index.html		# set recent html to the old one, to check later
 
 ./sizechecker.sh		# run sizechecker script, to check if there has been a website change and notify me
 
-# you can add a webhook url here if you want to get notified by slack, pushbullet ,etc. every time the script runs
-# echo 'the main script has run'	# uncomment this line to troubleshoot where problems are occuring
+#echo "blondedchecker.sh has run"
