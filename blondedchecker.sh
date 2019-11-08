@@ -1,19 +1,38 @@
-#!/bin/sh
+#!/bin/bash
 
-# THIS IS THE MAIN SCRIPT THAT RUNS, IT REFERENCES filter.sh and sizechecker.sh
+PATH1="/path/to/cashcat96/BlondedChecker" # path where you have https://github.com/cashcat96/BlondedChecker cloned
 
-cd /your/project/directory/here	# change this to the base directory where all this program's scripts are stored
+PATH2="/path/to/jacobtender/blondedchecker"  # path where you have https://github.com/jacobtender/blondedchecker cloned
 
-#rm index.html	# if you want to make sure there isn't already an index.html file, uncomment this line
+cd $PATH2
 
-wget https://blonded.co		# get the html from the website
+python3 productpuller.py > cps	# current product status (cps) gets calculated inside jacob's repo
 
-./filter.sh         # run filter script, removing dumb lines that trip this program (edit this script as problems come up)
+cp cps $PATH1
 
-diff -c prev.index.html index.html > diff	# record difference between previous index.html and just gotten one
+cd $PATH1
 
-mv index.html prev.index.html		# set recent html to the old one, to check later
+diff cps pps > diff	# calculates difference between current product status and previous product status
 
-./sizechecker.sh		# run sizechecker script, to check if there has been a website change and notify me
+c="$(stat -c%s diff)"           # store the size of the diff file in the variable c
 
-#echo "blondedchecker.sh has run"
+
+if [ 1 -gt $c ] >/dev/null              # checks to see if the size of 'diff' is zero by seeing if it  is less than 1
+
+then
+
+        echo "there is no website change" >/dev/null            # if the size of diff is zero, this means that there has been no website change
+
+else
+	echo "there has been a website change" >/dev/null               # displays there has been a website change in the terminal, and sends notifications below
+	sed '1s/^/THIS IS THE CURRENT STATUS\n/' cps > appendedcps	# adds lines to the beginning of the files to tell which one is old and which one is new
+	sed '1s/^/THIS IS THE OLD STATUS\n/' pps > appendedpps		# adds lines to the beginning of the files to tell which one is old and which one is new
+	diff -y appendedcps appendedpps > diff.txt	# make difference file
+	sleep 1		# pause for one second (solved some problem i had)
+	./notify.sh "We noticed a change to blonded.co! We will update you further if anything of note has happened"    # uses the new notify.sh to update whatever agents you have in the notify.sh file
+
+fi
+
+mv cps pps	# moves the current products status file to the previous product status file, to check later
+
+# echo "blondedchecker.sh has run"
